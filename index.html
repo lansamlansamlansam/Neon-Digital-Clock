@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Digital Clock</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #000000;
+            font-family: 'Courier New', Courier, monospace;
+            cursor: pointer;
+        }
+        
+        .clock-container {
+            background-color: #222222;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 25px rgba(255, 0, 255, 0.6);
+        }
+        
+        .clock {
+            font-size: 48px;
+            color: #fff;
+            text-align: center;
+            text-shadow: 0 0 5px #f0f, 0 0 10px #f0f, 0 0 15px #f0f, 0 0 20px #f0f, 0 0 25px #f0f, 0 0 30px #f0f;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="clock-container">
+        <div id="demo" class="clock"></div>
+    </div>
+
+    <script>
+        function myTimer() {
+            const d = new Date();
+            document.getElementById("demo").innerHTML = d.toLocaleTimeString();
+        }
+
+        setInterval(myTimer, 1000);
+        myTimer();
+    </script>
+</body>
+
+</html>
